@@ -13,8 +13,8 @@ export type YapiUrlAnalysisResult = Config & {
  * @returns
  */
 export const yapiUrlParser = async (config: Config): Promise<YapiUrlAnalysisResult> => {
-  const { yapiUrlList, filter, projects = [] } = config;
-  const urls = castArray(yapiUrlList);
+  const { yapiUrlList, filter, projects = [] } = config || {};
+  const urls = castArray(yapiUrlList).filter(Boolean);
   const results: Record<
     number,
     {

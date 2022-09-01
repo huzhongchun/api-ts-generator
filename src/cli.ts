@@ -1,11 +1,5 @@
-#!/usr/bin/env node
-/* eslint-disable no-inner-declarations */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-empty-pattern */
-/* eslint-disable global-require */
+#!/usr/bin/env ts-node
+
 import * as TSNode from 'ts-node';
 import fs from 'fs-extra';
 import path from 'path';
@@ -16,7 +10,6 @@ import { dedent } from 'vtils';
 import { Generator } from './Generator';
 import { Generator as GitRepoGenertor } from './GitRepoGenerator';
 import yargsParser from 'yargs-parser';
-import { packageCheck } from './dependenciesHandler';
 import chalk from 'chalk';
 import * as conso from './console';
 import { formatContent } from './utils';
@@ -27,7 +20,7 @@ import { yapiUrlParser } from './yapiUrlAnalysis';
 
 TSNode.register({
   // 不加载本地的 tsconfig.json
-  skipProject: true,
+  // skipProject: true,
   // 仅转译，不做类型检查
   transpileOnly: true,
   // 自定义编译选项
@@ -140,7 +133,7 @@ export async function genConfig() {
     formatContent(dedent`
       import { defineConfig } from 'api-generator'
 
-      export default defineConfig({
+      export default defineConfig([{
         serverType: '${serverTypeAnswers.serverType}',
         ${
           serverTypeAnswers.serverType !== 'git-repo'
@@ -149,9 +142,9 @@ export async function genConfig() {
         }
         ${
           serverTypeAnswers.serverType === 'yapi'
-            ? `projects: {
+            ? `projects: [{
           token: '${yapiAnswers?.token}' // yapi项目的token
-        },`
+        }],`
             : ''
         }
         ${
@@ -163,7 +156,7 @@ export async function genConfig() {
             : ''
         }
         outputFilePath: 'src/api'
-      })
+      }])
     `)
   );
   conso.success('写入配置文件完毕');
@@ -281,7 +274,7 @@ export default class CLI {
       .scriptName('APIGER')
       .usage('Usage: $0 <command> [options]')
       .command<any>(
-        'gen',
+        'make',
         '生成接口类型声明和方法',
         y => {},
         (argv: any) => {
@@ -290,7 +283,7 @@ export default class CLI {
         }
       )
       .command<any>(
-        'init',
+        'config',
         '生成配置文件',
         y => {},
         (argv: any) => {

@@ -1,7 +1,6 @@
 {
   "name": "api-generator",
   "version": "1.0.0",
-  "license": "MIT",
   "author": "huzhongchun <huzhongchun001@qq.com>",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -15,12 +14,12 @@
   ],
   "scripts": {
     "build": "father build",
-    "gen": "ts-node test/gen.ts --type-check false gen",
-    "init": "ts-node test/gen.ts --type-check false init",
+    "cf": "tsnd test/gen.ts --type-check false config",
+    "mk": "ts-node test/gen.ts --type-check false make",
     "publishOnly": "npm run build",
     "prerelease": "npm run build",
     "release": "npm run build && standard-version && git push --follow-tags origin master && npm publish",
-    "test": "ts-node test/index.ts --type-check false"
+    "test": "tsnd test/index.ts --type-check false"
   },
   "lint-staged": {
     "src/*.{js,json,vue}": [

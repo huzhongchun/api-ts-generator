@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "baseUrl": "./",
     "rootDir": "./",
     "strict": false,
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES5",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "declaration": true,
     "removeComments": false,

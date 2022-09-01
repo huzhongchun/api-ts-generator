@@ -19,7 +19,7 @@ export default async (config: Config) => {
   const content = `
   ${topNotesContent()}
 
-  import request from 'axios';
+  import request,{ AxiosRequestConfig } from 'axios';  // axios版本>=0.18.1
 
   const instance = request.create({
     withCredentials: true,
@@ -27,7 +27,7 @@ export default async (config: Config) => {
   });
 
   // 自定义request拦截器
-  instance.interceptor.req((config) => {
+  instance.interceptors.request.use((config) => {
     return  {
       ...config
     }
@@ -35,7 +35,7 @@ export default async (config: Config) => {
 
   // 自定义response拦截器，
   // 注意：如果修改接口正常返回的结构，对应的response声明需要修改
-  instance.interceptor.res((r) => {
+  instance.interceptors.response.use((r) => {
     const { data, config } = r;
     if (data.code === 0) {
 
@@ -44,13 +44,14 @@ export default async (config: Config) => {
     return Promise.reject(data);
   });
 
-  // 自定义异常拦截器
-  instance.interceptor.error((error) => {
-    const { response, config } = error;
-    return Promise.reject(error);
-  });
-
-  export default instance;
+  export default {
+    get: <RQ, RP>(url: string, config?: AxiosRequestConfig) => {
+      return instance.get<RP>(url, config);
+    },
+    post: <RQ, RP>(url: string, config?: AxiosRequestConfig) => {
+      return instance.post<RP>(url, config);
+    }
+  };
 `;
 
   fs.outputFile(rawRequestFunctionFilePath, formatContent(dedent`${content}`, prettierConfigPath));
