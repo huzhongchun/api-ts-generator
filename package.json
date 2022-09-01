@@ -1,6 +1,6 @@
 {
   "name": "api-ts-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "huzhongchun <huzhongchun001@qq.com>",
   "main": "./lib/index.js",
   "module": "./es/index.js",
