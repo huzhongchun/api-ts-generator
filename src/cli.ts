@@ -131,7 +131,7 @@ export async function genConfig() {
   await fs.outputFile(
     configTSFile,
     formatContent(dedent`
-      import { defineConfig } from 'api-generator'
+      import { defineConfig } from 'api-ts-generator'
 
       export default defineConfig([{
         serverType: '${serverTypeAnswers.serverType}',

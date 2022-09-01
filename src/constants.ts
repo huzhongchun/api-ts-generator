@@ -1,6 +1,6 @@
 export const DefaultServerUrl = '';
 
-export const CookieStoreFile = '/Users/Shared/api-generator/yapiCookies.json';
+export const CookieStoreFile = '/Users/Shared/api-ts-generator/yapiCookies.json';
 
 export enum ResponseErrorCode {
   /** 未登录 */

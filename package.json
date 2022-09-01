@@ -1,5 +1,5 @@
 {
-  "name": "api-generator",
+  "name": "api-ts-generator",
   "version": "1.0.1",
   "author": "huzhongchun <huzhongchun001@qq.com>",
   "main": "./lib/index.js",
@@ -17,7 +17,6 @@
     "cf": "tsnd test/gen.ts --type-check false config",
     "mk": "ts-node test/gen.ts --type-check false make",
     "publishOnly": "npm run build",
-    "prerelease": "npm run build",
     "release": "npm run build && standard-version && git push --follow-tags origin master && npm publish",
     "test": "tsnd test/index.ts --type-check false"
   },

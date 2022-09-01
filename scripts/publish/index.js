@@ -14,7 +14,7 @@ inquirer
       type: 'list',
       name: 'packageName',
       message: '请选择需要发布的项目：',
-      choices: ['api-generator'],
+      choices: ['api-ts-generator'],
       when: async function () {
         try {
           const res = await git.status();

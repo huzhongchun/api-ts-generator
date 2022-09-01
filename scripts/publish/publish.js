@@ -18,7 +18,7 @@ const spinner = new Ora({
  */
 async function publish(answers) {
   const { version, preId } = answers;
-  const packageName = 'api-generator';
+  const packageName = 'api-ts-generator';
 
   const targetPackageJson = path.resolve(__dirname, '../../package.json');
 

@@ -417,7 +417,7 @@ export function formatContent(content: string, prettierConfigPath?: string): str
 export function topNotesContent(): string {
   return `
   /**
-   * Created By api-generator
+   * Created By api-ts-generator
    */
 
   `;

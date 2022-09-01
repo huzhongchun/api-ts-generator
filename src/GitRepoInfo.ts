@@ -58,7 +58,7 @@ class GitRepoInfo {
     const { latest, all = [] } = await this.logs();
     return `
     /**
-     * Created By api-generator
+     * Created By api-ts-generator
      *
      * repo: ${this.gitRepoPath}
      */
