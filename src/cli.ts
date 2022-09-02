@@ -271,10 +271,10 @@ export default class CLI {
 
   init() {
     return yargs
-      .scriptName('APIGER')
+      .scriptName('apits-gener')
       .usage('Usage: $0 <command> [options]')
       .command<any>(
-        'make',
+        'gen',
         '生成接口类型声明和方法',
         y => {},
         (argv: any) => {
@@ -283,7 +283,7 @@ export default class CLI {
         }
       )
       .command<any>(
-        'config',
+        'init',
         '生成配置文件',
         y => {},
         (argv: any) => {

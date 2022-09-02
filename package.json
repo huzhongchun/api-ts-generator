@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "bin": {
-    "APIGER": "./bin/apits"
+    "apits-gener": "./bin/apits-gener"
   },
   "files": [
     "bin",
