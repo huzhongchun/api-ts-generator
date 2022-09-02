@@ -4,16 +4,16 @@
 
 ## 安装
 
-`npm install api-ts-generator -D`
+`npm install api-ts-generator -g`
 
 ## 初始化生成配置文件
 
-`npx APIGER config`
+`apits-gener config`
 
 
 ## 生成接口
 
-`npx APIGER make`
+`apits-gener make`
 
 
 ## 配置
