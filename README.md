@@ -8,12 +8,12 @@
 
 ## 初始化生成配置文件
 
-`apits-gener config`
+`apits-gener init`
 
 
 ## 生成接口
 
-`apits-gener make`
+`apits-gener gen`
 
 
 ## 配置

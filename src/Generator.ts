@@ -192,13 +192,13 @@ export class Generator {
 
       return Promise.all(
         Object.keys(categoryInterfaceList).map(async (catId: string, catIndex) => {
-          const categoryConfig = categories.filter(cat => String(cat.id) === catId)[0];
+          const categoryConfig = categories?.filter(cat => String(cat.id) === catId)[0];
           // 接口列表
           let interfaceList = categoryInterfaceList[catId];
           interfaceList = interfaceList
             .map(interfaceInfo => {
               const { path, _id } = interfaceInfo;
-              const interfaceFilter = categoryConfig.filter || filter;
+              const interfaceFilter = categoryConfig?.filter || filter;
               if (!filterHandler(interfaceFilter)(path, _id)) {
                 return false;
               }
