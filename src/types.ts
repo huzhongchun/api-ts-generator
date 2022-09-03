@@ -722,6 +722,10 @@ export interface ServerConfig extends SharedConfig, GenTemplateType {
    */
   prettierConfigPath?: string;
   /**
+   * 是否使用默认请求库，关闭后不再生成request.ts
+   */
+  defaultRequestLib?: boolean;
+  /**
    * 代理请求模式，所有请求均请求到指定接口
    */
   proxyInterface?: {

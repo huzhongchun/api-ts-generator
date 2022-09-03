@@ -18,6 +18,7 @@
     "init": "tsnd test/gen.ts --type-check false init",
     "publishOnly": "npm run build",
     "release": "npm run build && standard-version && git push --follow-tags origin master && npm publish",
+    "requestTest": "tsnd test/requestTest.ts --type-check false",
     "test": "tsnd test/index.ts --type-check false"
   },
   "lint-staged": {

@@ -7,7 +7,8 @@ import { formatContent, topNotesContent } from './utils';
 import * as conso from './console';
 
 export default async (config: Config) => {
-  const { prettierConfigPath, outputFilePath } = config;
+  const { prettierConfigPath, defaultRequestLib } = config;
+  if (defaultRequestLib === false) return;
   const rawRequestFunctionFilePath = getOutputFilePath(config, 'request.ts');
   if (!config.typesOnly) {
     if (await fs.pathExists(rawRequestFunctionFilePath)) {
