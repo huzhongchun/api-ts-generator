@@ -18,4 +18,5 @@
 
 ## 配置
 
+参考开源代码：https://fjc0k.github.io/yapi-to-typescript/handbook/
 
