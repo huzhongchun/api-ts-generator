@@ -303,8 +303,8 @@ export class Generator {
   requestFunctionNameGen(extendedInterfaceInfo: ExtendedInterface): string {
     const path = extendedInterfaceInfo.parsedPath.dir;
     const method = extendedInterfaceInfo.method; // 可能存在同path，不同method的用法
-    const prefix = [method, ...path.split('/')].join('_');
-    return changeCase.camelCase(prefix + extendedInterfaceInfo.parsedPath.name);
+    const words = [method, ...path.split('/'), extendedInterfaceInfo.parsedPath.name].join('_');
+    return changeCase.camelCase(words);
   }
 
   /** 生成接口代码 */
