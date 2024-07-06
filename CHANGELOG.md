@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.6"></a>
+## [1.0.6](https://gitee.com/huzhongchun/api-generator/compare/v1.0.5...v1.0.6) (2024-07-06)
+
+
+### Bug Fixes
+
+* update ([3098371](https://gitee.com/huzhongchun/api-generator/commits/3098371))
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://gitee.com/huzhongchun/api-generator/compare/v1.0.4...v1.0.5) (2022-09-03)
 
